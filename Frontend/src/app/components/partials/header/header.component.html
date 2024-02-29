@@ -1,0 +1,29 @@
+<header>
+  <div class="ul-container">
+    <a routerLink="/" class="logo"> <img src="../../../../assets/HungryHub.gif" alt="logo"></a>
+    <nav style="display: flex;  ">
+      <div style="margin-top: -33px;"><app-search></app-search></div>
+      <!-- <div> -->
+      <ul style="align-items: center;">
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login <i class="fa-regular fa-user"></i> </a>
+        </li>
+        
+        <li li *ngIf="isAuth" class="menu-container">
+          <a routerLink="/dashboard">{{user.name}}</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+            <a (click)="logout()">Logout</a>
+            <!-- </div> -->
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span>{{cartQuantity}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

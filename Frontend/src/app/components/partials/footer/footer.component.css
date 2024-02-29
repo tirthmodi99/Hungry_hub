@@ -1,0 +1,26 @@
+.container {
+    /* background-image: url("../../../../assets/bg-removebg-preview.png"); */
+
+    font-size: 20px;
+    background-color: rgb(2, 6, 10);
+    padding: 50px;
+    color: white;
+  }
+
+i:hover{
+    color: #0bc70b;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s; 
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  .footer-links a:hover {
+    color: #0bc70b;
+  }
