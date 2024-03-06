@@ -28,12 +28,23 @@ li a img{
   object-fit: cover;
   height: 14.5rem;
 }
-
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .content{
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
   height: 7rem;
+}
+.view{
+  margin-right: 8.75rem;
+  color: black; 
+}
+.view:hover{
+  color: #0bc70b;
 }
 
 .favorite{

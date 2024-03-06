@@ -1,0 +1,19 @@
+<app-not-found [visible]="!restaurants || !restaurants.length" notFoundMessage="Restaurants Not Found" resetLinkText="Reset Search">
+  </app-not-found>
+  <ul>
+    <li *ngFor="let restaurant of restaurants">
+      <a routerLink="/restaurant/{{restaurant.rstid}}">
+        <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+        <div class="content">
+          <div class="name">
+         {{restaurant.name}}
+          </div>
+          <div class="stars">
+            <star-rating [value]="restaurant.stars" [totalstars]="5" [checkedcolor]="getStarColor(restaurant.stars)"
+              uncheckedcolor="black" size="22px" [readonly]="true">
+            </star-rating>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>

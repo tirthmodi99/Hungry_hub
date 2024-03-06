@@ -1,49 +1,79 @@
-<app-tags></app-tags>
-<app-not-found
-[visible]="!foods || !foods.length"
-resetLinkText="Reset Search">
-</app-not-found>
-<ul>
-  <li *ngFor="let food of foods">
-    <a routerLink="/food/{{food.id}}">
-      <img [src]="food.imageUrl" [alt]="food.name" />
-      <div class="content">
-        <div class="name">
-          {{food.name}}
-        </div>
-        <!-- <span class="favorite {{food.favorite?'':'not'}}">
+<div>
+  <div class= "heading">
+  <h2 style="margin-left: 7.5rem;">Top Rated Delicious Food</h2>
+ <a routerLink="/foods"><strong class="view">View All >></strong></a>
+</div>
+  <app-not-found [visible]="!foods || !foods.length" resetLinkText="Reset Search">
+  </app-not-found>
+  <ul>
+    <li *ngFor="let food of foods">
+      <a routerLink="/food/{{food.id}}">
+        <img [src]="food.imageUrl" [alt]="food.name" />
+        <div class="content">
+          <div class="name">
+            {{food.name}}
+          </div>
+          <!-- <span class="favorite {{food.favorite?'':'not'}}">
           ❤
         </span> -->
-    
-        <!-- <div class="stars">
-          <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
-            [readonly]="true">
-          </star-rating>
-        </div> -->
-        <div class="stars">
-          <star-rating [value]="food.stars" [totalstars]="5" [checkedcolor]="getStarColor(food.stars)" uncheckedcolor="black" size="22px" [readonly]="true">
-          </star-rating>
-        </div>
-        
-        <div class="product-item-footer">
-          <div class="origins">
-            <span *ngFor="let origin of food.origins">
-              {{origin}}
+          <div class="stars">
+            <star-rating [value]="food.stars" [totalstars]="5" [checkedcolor]="getStarColor(food.stars)"
+              uncheckedcolor="black" size="25px" [readonly]="true">
+            </star-rating>
+          </div>
+
+          <div class="product-item-footer">
+            <div class="origins">
+              <span *ngFor="let origin of food.origins">
+                {{origin}}
+              </span>
+            </div>
+
+            <div class="cook-time">
+              <span>🕒</span>
+              {{food.cookTime}}
+            </div>
+          </div>
+          <div class=" Restaurant">
+            {{food.Restaurant}}
+          </div>
+          <div class="price">
+            <span>
+              {{food.price | currency: 'INR' }}
             </span>
           </div>
-
-          <div class="cook-time">
-            <span>🕒</span>
-            {{food.cookTime}}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+<div>
+  <div>
+      <div class= "heading">
+        <h2 style="margin-left: 7.5rem;">Top Rated Restaurants with online food Delivery</h2>
+  <a routerLink="/restaurant"><strong class="view">View All >></strong></a>
+  </div>
+  <app-not-found [visible]="!restaurants || !restaurants.length" notFoundMessage="Restaurants Not Found" resetLinkText="Reset Search">
+  </app-not-found>
+  <ul>
+    <li *ngFor="let restaurant of restaurants">
+      <a routerLink="/restaurant/{{restaurant.rstid}}">
+        <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+        <div class="content">
+          <div class="name">
+         {{restaurant.name}}
+          </div>
+          <div class="stars">
+            <star-rating [value]="restaurant.stars" [totalstars]="5" [checkedcolor]="getStarColor(restaurant.stars)"
+              uncheckedcolor="black" size="25px" [readonly]="true">
+            </star-rating>
           </div>
         </div>
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+<div>
+</div>
 
-        <div class="price">
-          <span>
-            {{food.price | currency: 'INR' }}
-          </span>
-        </div>
-      </div>
-    </a>
-  </li>
-</ul>

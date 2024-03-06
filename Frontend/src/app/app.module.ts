@@ -14,9 +14,14 @@ import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { RestaurantsPageComponent } from './components/pages/restaurants-page/restaurants-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RestaurantComponent } from './components/pages/restaurant/restaurant.component';
+import { FoodsComponent } from './components/pages/foods/foods.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +30,15 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
     SearchComponent,
     TagsComponent,
     FoodPageComponent,
+    RestaurantsPageComponent,
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RestaurantComponent,
+    FoodsComponent
+  
   ],
   imports: [
     BrowserModule,
