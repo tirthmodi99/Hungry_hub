@@ -10,6 +10,9 @@ export const sample_foods: any[] = [
     stars: 4.5,
     imageUrl: 'assets/food-1.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
+    Restaurant: "la pino'z pizza",
+    RestaurantID:"2"
+
   },
   {
     id:'2',
@@ -18,7 +21,7 @@ export const sample_foods: any[] = [
     cookTime: '20-30',
     favorite: true,
     origins: ['persia', 'china'],
-    stars: 4.7,
+    stars: 4.1,
     imageUrl: 'assets/food-2.jpg',
     tags: ['SlowFood', 'FastFood'],
   },
@@ -40,7 +43,7 @@ export const sample_foods: any[] = [
     cookTime: '15-20',
     favorite: true,
     origins: ['belgium', 'france'],
-    stars: 3.5,
+    stars: 4.0,
     imageUrl: 'assets/food-4.jpg',
     tags: ['FastFood', 'Fry'],
   },
@@ -95,7 +98,7 @@ export const sample_foods: any[] = [
     cookTime: '45-50',
     favorite: false,
     origins: ['Indian'],
-    stars: 4.2,
+    stars: 4.4,
     imageUrl: 'assets/food-9.png',
     tags: ['Food', 'Biryani', 'Lunch','Dinner'],
   },
@@ -139,7 +142,7 @@ export const sample_foods: any[] = [
     cookTime: '40',
     favorite: false,
     origins: ['indian'],
-    stars: 4.0,
+    stars: 4.5,
     imageUrl: 'assets/food-13.jpg',
     tags: ['FastFood', 'Break-Fast'],
   },
@@ -194,7 +197,7 @@ export const sample_foods: any[] = [
     cookTime: '10',
     favorite: false,
     origins: ['indian'],
-    stars: 4.4,
+    stars: 4.6,
     imageUrl: 'assets/food-18.jpg',
     tags: ['FastFood', 'Break-Fast'],
   },
@@ -260,7 +263,7 @@ export const sample_foods: any[] = [
     cookTime: '40',
     favorite: false,
     origins: ['Indian'],
-    stars: 4.1,
+    stars: 4.3,
     imageUrl: 'assets/food-24.jpg',
     tags: ['Lunch', 'Dinner'],
   },
@@ -297,6 +300,39 @@ export const sample_foods: any[] = [
     imageUrl: 'assets/food-27.jpg',
     tags: ['FastFood', 'Break-Fast'],
   },
+  // {
+  //   id:'28',
+  //   name: 'Kulhad Chai',
+  //   price: 15,
+  //   cookTime: '10',
+  //   favorite: true,
+  //   origins: ['Indian'],
+  //   stars: 4.4,
+  //   imageUrl: 'assets/food-28.jpg',
+  //   tags: [ 'Break-Fast'],
+  // },
+  // {
+  //   id:'29',
+  //   name: 'Kulhad Chai',
+  //   price: 15,
+  //   cookTime: '10',
+  //   favorite: true,
+  //   origins: ['Indian'],
+  //   stars: 4.4,
+  //   imageUrl: 'assets/food-28.jpg',
+  //   tags: [ 'Break-Fast'],
+  // },
+  // {
+  //   id:'30',
+  //   name: 'Kulhad Chai',
+  //   price: 15,
+  //   cookTime: '10',
+  //   favorite: true,
+  //   origins: ['Indian'],
+  //   stars: 4.4,
+  //   imageUrl: 'assets/food-28.jpg',
+  //   tags: [ 'Break-Fast'],
+  // }
 ]
 
 export const sample_tags:any[] = [
@@ -305,13 +341,84 @@ export const sample_tags:any[] = [
   { name: 'Pizza', count: 3 },
   { name: 'Lunch', count: 3 },
   { name: 'SlowFood', count: 2 },
-  { name: 'Hamburger', count: 2 },
   { name: 'Fry', count: 1 },
   { name: 'Soup', count: 1 },
   { name: 'Break-Fast', count: 13 },
   { name: 'South-Indian', count: 2 },
 
 ]
+
+// export const sample_foods: any[] = [
+//   {
+//     id:'1',
+//     name: 'Pizza',
+//     cookTime: '15-20',
+//     price: 120,
+//     favorite: false,
+//     origins: ['italy'],
+//     stars: 4.5,
+//     imageUrl: 'assets/food-1.jpg',
+//     tags: ['FastFood', 'Pizza', 'Lunch'],
+//     Restaurants: "la pino'z pizza"
+//   },
+//   {
+//     id:'2',
+//     name: 'Manchurian',
+//     price: 90,
+//     cookTime: '20-30',
+//     favorite: true,
+//     origins: ['persia', 'china'],
+//     stars: 4.7,
+//     imageUrl: 'assets/food-2.jpg',
+//     tags: ['SlowFood', 'FastFood'],
+//     Restaurants: 'Mama Mia'
+//   },
+//   {
+//     id:'3',
+//     name: 'Burger',
+//     price: 150,
+//     cookTime: '10-15',
+//     favorite: false,
+//     origins: ['germany', 'us'],
+//     stars: 3.5,
+//     imageUrl: 'assets/food-3.jpg',
+//     tags: ['FastFood', 'Hamburger'],
+//     Restaurants: 'The Burger Bar'
+//   },
+//   {
+//     id:'4',
+//     name: 'French Fries',
+//     price: 90,
+//     cookTime: '15-20',
+//     favorite: true,
+//     origins: ['belgium', 'france'],
+//     stars: 3.5,
+//     imageUrl: 'assets/food-4.jpg',
+//     tags: ['FastFood', 'Fry'],
+//     Restaurants: 'McDonald\'s'
+//   },
+//   {
+//     id:'5',
+//     name: 'Vegetable Soup',
+//     price: 60,
+//     cookTime: '40',
+//     favorite: false,
+//     origins: ['india', 'asia'],
+//     stars: 3.0,
+//     imageUrl: 'assets/food-5.jpg',
+//     tags: ['SlowFood', 'Soup'],
+//     Restaurants: 'Le Petit Chateau'
+//   },
+// ]
+
+
+
+
+
+
+
+
+
 export const sample_users: any[] =[
   {
 name: "Tirth Modi",

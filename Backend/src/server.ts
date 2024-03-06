@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
-import { sample_foods, sample_tags, sample_users } from "./data";
 import jwt from "jsonwebtoken"
-
+import { sample_foods, sample_tags, sample_users } from "./data";
+import { sample_restaurant } from "./datars";
+// import {  sample_restaurant, sample_restaurants, sample_rstags } from "./datars";
 const app = express();
 app.use(express.json())
 app.use(cors({
@@ -36,6 +37,48 @@ app.get("/api/foods/:foodId", (req, res) => {
     const food = sample_foods.find(food => food.id == foodId);
     res.send(food)
 })
+
+
+// app.get("/api/restaurant", (req, res) => {
+//     res.send(sample_restaurant)
+// })
+
+// //get restaurants by ID
+// app.get("/api/restaurant/:rstId", (req, res) => {
+//     const rstId = req.params.rstId;
+//     const restaurant = sample_restaurant.find(restaurants => restaurants.rstid === rstId);
+//     res.send(restaurant)
+// })
+
+app.get("/api/restaurant", (req, res) => {
+    res.send(sample_restaurant)
+})
+
+app.get("/api/restaurant/search/:searchTerm", (req, res) => {
+    const searchTerm = req.params.searchTerm;
+    const restaurant = sample_restaurant.filter(restaurants => restaurants.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    res.send(sample_restaurant)
+})
+
+//get food by All tags
+app.get("/api/restaurant/rstags", (req, res) => {
+    res.send(sample_tags)
+})
+
+//get food by special tags
+app.get("/api/restaurant/rstag/:tagName", (req, res) => {
+    const tagName = req.params.tagName;
+    const restaurant = sample_restaurant.filter(restaurant => restaurant.tags?.includes(tagName));
+    res.send(restaurant)
+})
+
+//get restaurants by ID
+app.get("/api/restaurant/:rstId", (req, res) => {
+    const rstId = req.params.rstId;
+    const restaurant = sample_restaurant.find(restaurants => restaurants.rstid === rstId);
+    res.send(restaurant)
+})
+
 
 //login api
 app.post("/api/user/login",(req, res)=>{
