@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
         address: fv.address
       };
   
-      this.userService.register(user).subscribe((_: any) => {
+      this.userService.register(user).subscribe(_ => {
         this.router.navigateByUrl(this.returnUrl);
       })
     }

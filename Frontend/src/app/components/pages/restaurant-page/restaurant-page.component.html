@@ -1,4 +1,5 @@
-<!-- <app-not-found [visible]="!restaurants" notFoundMessage="Restaurants Not Found"
+
+<app-not-found [visible]="!restaurants" notFoundMessage="Restaurants Not Found"
     resetLinkText="Back To Homepage"></app-not-found>
 
 <div *ngIf="restaurants" class="container">
@@ -15,45 +16,47 @@
             <star-rating [value]="restaurants.stars" [totalstars]="5" [checkedcolor]="restaurants.stars >= 3.5 ? 'gold' : 'red'"
                 uncheckedcolor="black" size="25px" [readonly]="true">
             </star-rating>
+            
+    <button >Menu</button>
+  
+
         </div>
     </div>
-</div> -->
+</div>
 
-<app-not-found
-  [visible]="!restaurant"
-  notFoundMessage="Restaurant Not Found"
+<!-- <app-not-found
+  [visible]="!restaurants"
+  notFoundMessage="restaurants Not Found"
   resetLinkText="Back To Homepage">
 </app-not-found>
 
 
-<div *ngIf="restaurant.rstid" class="container">
-  <img [src]="restaurant.imageUrl" [alt]="restaurant.name"/>
+<div *ngIf="restaurants.rstid" class="container">
+  <img [src]="restaurants.imageUrl" [alt]="restaurants.name"/>
 
   <div class="details">
     <div class="header">
       <span class="name">
-        {{restaurant.name}}
+        {{restaurants.name}}
       </span>
-      <span class="favorite {{restaurant.favorite? '': 'not'}}">❤</span>
+      <span class="favorite {{restaurants.favorite? '': 'not'}}">❤</span>
     </div>
     <div class="rating">
         
-            <star-rating [value]="restaurant.stars" [totalstars]="5" [checkedcolor]="restaurant.stars >= 3.5 ? 'gold' : 'red'"
+            <star-rating [value]="restaurants.stars" [totalstars]="5" [checkedcolor]="restaurants.stars >= 3.5 ? 'gold' : 'red'"
                 uncheckedcolor="black" size="25px" [readonly]="true">
             </star-rating>
         
-    </div>
+    </div> -->
 
     <!-- <div class="tags">
-      <a *ngFor="let tag of restaurant.rstags" routerLink="/tag/{{rstag}}">
+      <a *ngFor="let tag of restaurants.rstags" routerLink="/tag/{{rstag}}">
         {{tag}}
       </a>
     </div>
 
     -->
 
-    <button >Menu</button>
-  
-  </div>
-</div>
 <!-- (click)=" menu()" -->
+<!-- </div>
+</div> -->

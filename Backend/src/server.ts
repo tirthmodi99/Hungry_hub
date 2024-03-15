@@ -139,6 +139,49 @@
 //     console.log("Website is Runing on http://localhost: " + port)
 // })
 
+
+
+
+
+
+// import dotenv from 'dotenv';
+// dotenv.config();
+// import path from 'path';
+// import express from "express";
+// import cors from "cors";
+// import foodRouter from './routers/food.router';
+// import userRouter from './routers/user.router';
+// import restaurantRouter from './routers/restaurant.router';
+// // import orderRouter from './routers/order.router';
+// import { dbConnect } from './config/database.config';
+// dbConnect();
+
+// const app = express();
+// app.use(express.json());
+// app.use(cors({
+//     credentials:true,
+//     origin:["http://localhost:4200"]
+// }));
+
+// app.use("/api/foods", foodRouter);
+// app.use("/api/users", userRouter);
+// // app.use("/api/orders", orderRouter);
+// app.use("/api/restaurants, restauratRouter");
+
+// app.use(express.static('public'));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname,'public', 'index.html'))
+// })
+
+// const port = process.env.PORT || 5000;
+// app.listen(port, () => {
+//     console.log("Website served on http://localhost:" + port);
+// })
+
+
+
+
+
 import dotenv from 'dotenv';
 dotenv.config();
 import path from 'path';
@@ -146,8 +189,11 @@ import express from "express";
 import cors from "cors";
 import foodRouter from './routers/food.router';
 import userRouter from './routers/user.router';
+import restaurantRouter from './routers/restaurant.router';
 // import orderRouter from './routers/order.router';
 import { dbConnect } from './config/database.config';
+// import authenticationMiddleware from './middlewares/auth.mid'; // Update the path
+
 dbConnect();
 
 const app = express();
@@ -157,9 +203,12 @@ app.use(cors({
     origin:["http://localhost:4200"]
 }));
 
+// app.use(authenticationMiddleware); // Use the authentication middleware before any routes
+
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
 // app.use("/api/orders", orderRouter);
+app.use("/api/restaurants", restaurantRouter); // Correct the typo here
 
 app.use(express.static('public'));
 app.get('*', (req, res) => {
