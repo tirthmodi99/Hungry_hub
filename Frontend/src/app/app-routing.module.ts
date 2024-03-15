@@ -7,6 +7,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { RestaurantsPageComponent } from './components/pages/restaurants-page/restaurants-page.component';
 import { RestaurantComponent } from './components/pages/restaurant/restaurant.component';
 import { FoodsComponent } from './components/pages/foods/foods.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'restaurant/:id', component:RestaurantsPageComponent},
   {path: 'restaurant', component:RestaurantComponent},
-  {path: 'foods',component:FoodsComponent}
+  {path: 'foods',component:FoodsComponent},
+  {path:'register', component: RegisterComponent}
 ];
 
 @NgModule({

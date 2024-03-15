@@ -1,0 +1,55 @@
+
+<div class="container">
+    <div class="details">
+        <app-title title="Register"></app-title>
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="input-container">
+                <label for="name">Name</label>
+                <div><br>
+                    <input type="text" placeholder="Your Name" formControlName="name">
+                </div><br>
+                <div class="error-list" *ngIf="fc.email.errors && isSubmited">
+                    <div *ngIf="fc.email.errors.required">Should not be empty! </div>
+                    <div *ngIf="fc.email.errors.email">Email is not correct </div>
+                </div><br>
+             </div>
+            <div class="input-container">
+                <label for="email">Email</label>
+                <div><br>
+                    <input type="email" placeholder="abc@gmail.com" formControlName="email">
+                </div><br> 
+                <!-- Add error handling here if needed -->
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <div><br>
+                    <input type="password" placeholder="******" formControlName="password">
+                </div><br> 
+                <!-- Add error handling here if needed -->
+            </div> 
+            <div class="input-container">
+                <label for="confirmPassword">Confirm Password</label>
+                <div><br>
+                    <input type="password" placeholder="******" formControlName="confirmPassword">
+                </div><br> 
+                <!-- Add error handling here if needed -->
+            </div>
+            <div class="input-container">
+                <label for="address">Address</label>
+                <div><br>
+                    <input type="text" placeholder="Your Address" formControlName="address">
+                </div><br> 
+                <!-- Add error handling here if needed -->
+             </div>
+            <div class="button">
+                <button type="submit">Register</button>
+            </div>
+            <div class="login">
+                Already a user? &nbsp;
+                <a routerLink="/login" [queryParams]="{returnUrl: returnUrl}">
+                    Login Here
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

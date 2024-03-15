@@ -10,8 +10,8 @@ export const sample_foods: any[] = [
     stars: 4.5,
     imageUrl: 'assets/food-1.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
-    Restaurant: "la pino'z pizza",
-    RestaurantID:"2"
+    // Restaurant: "la pino'z pizza",
+    // rstid:"2"
 
   },
   {
@@ -24,6 +24,8 @@ export const sample_foods: any[] = [
     stars: 4.1,
     imageUrl: 'assets/food-2.jpg',
     tags: ['SlowFood', 'FastFood'],
+    // Restaurant: "la pino'z pizza",
+    // rstid:"2"
   },
   {
     id:'3',
@@ -35,6 +37,8 @@ export const sample_foods: any[] = [
     stars: 3.5,
     imageUrl: 'assets/food-3.jpg',
     tags: ['FastFood', 'Hamburger'],
+    // Restaurant: "la pino'z pizza",
+    // rstid:"3"
   },
   {
     id:'4',
@@ -299,7 +303,7 @@ export const sample_foods: any[] = [
     stars: 3.9,
     imageUrl: 'assets/food-27.jpg',
     tags: ['FastFood', 'Break-Fast'],
-  },
+  },]
   // {
   //   id:'28',
   //   name: 'Kulhad Chai',
@@ -333,7 +337,7 @@ export const sample_foods: any[] = [
   //   imageUrl: 'assets/food-28.jpg',
   //   tags: [ 'Break-Fast'],
   // }
-]
+// ]
 
 export const sample_tags:any[] = [
   { name: 'All', count: 27 },

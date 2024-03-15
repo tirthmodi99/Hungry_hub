@@ -121,7 +121,16 @@
   
     toggleFavorite(food: any): void {
       food.favorite = !food.favorite;
+  
     }
+    // onRestaurantClick() {
+    //   // This method will be executed when the div is clicked.
+    //   // Add your click event logic here.
+    //   console.log('Restaurant div clicked!');
+    // }
+ 
+ 
   }
+
        
     

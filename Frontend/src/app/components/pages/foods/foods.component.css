@@ -28,12 +28,18 @@ ul{
     object-fit: cover;
     height: 14.5rem;
   }
+  .Restaurant{
+    margin: 0.5rem;
+    display: flex;
+    overflow: hidden;
+    color: #2c9c19;
+  }
   
   .content{
     margin-top: 0.4rem;
     padding: 0.5rem 1rem;
     position: relative;
-    height: 8rem;
+    height: 9rem;
   }
   
   .favorite{

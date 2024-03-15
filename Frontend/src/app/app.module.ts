@@ -20,6 +20,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RestaurantComponent } from './components/pages/restaurant/restaurant.component';
 import { FoodsComponent } from './components/pages/foods/foods.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { FoodsComponent } from './components/pages/foods/foods.component';
     FooterComponent,
     LoginComponent,
     RestaurantComponent,
-    FoodsComponent
+    FoodsComponent,
+    AdminComponent,
+    RegisterComponent,
+
   
   ],
   imports: [

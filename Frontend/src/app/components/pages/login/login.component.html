@@ -1,29 +1,60 @@
+<!-- <div class="container">
+  <div class="details">
+      <app-title title="Login"></app-title>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+          <div class="input-container">
+              <label for="email">Email</label>
+              <div><br>
+                  <input type="email" id="email" placeholder="abc@gmail.com" formControlName="email">
+              </div>
+              <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+                  <div *ngIf="fc.email.errors.required">Should not be empty! </div>
+                  <div *ngIf="fc.email.errors.email">Email is not correct </div>
+              </div><br>
+          </div>
+          <div class="input-container">
+              <label for="password">Password</label>
+              <div><br>
+                  <input type="password" id="password" placeholder="******" formControlName="password">
+              </div><br>
+              <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+                  <div *ngIf="fc.password.errors.required">Should not be empty ! </div>
+              </div>
+          </div><br>
+          <div class="button">
+              <button type="submit">Login</button>
+          </div>
+      </form>
+  </div>
+</div> -->
+
+
 <div class="container">
-    <div class="details">
-        <app-title title="Login"></app-title>
-        <form [formGroup]="loginForm" (ngSubmit)="submit()">
-            <div class="input-container">
-                <label for="email">Email</label>
-                <div><br>
-                    <input type="email" placeholder="abc@gmail.com" formControlName="email">
-                </div>
-                <div class="error-list" *ngIf="fc.email.errors && isSubmited">
-                    <div *ngIf="fc.email.errors.required">Should not be empty! </div>
-                    <div *ngIf="fc.email.errors.email">Email is not correct </div>
-                </div><br>
-            </div>
-            <div class="input-container">
-                <label for="password">Password</label>
-                <div><br>
-                    <input type="password" placeholder="******" formControlName="password">
-                </div><br>
-                <div class="error-list" *ngIf="fc.password.errors && isSubmited">
-                    <div *ngIf="fc.password.errors.required">Should not be empty ! </div>
-                </div>
-            </div><br>
-            <div class="button">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
+  <div class="details">
+    <app-title title="Login"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="input-container">
+        <label for="email">Email</label>
+        <div><br>
+          <input type="email" id="email" placeholder="abc@gmail.com" formControlName="email">
+        </div>
+        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+          <div *ngIf="fc.email.errors.required">Should not be empty! </div>
+          <div *ngIf="fc.email.errors.email">Email is not correct </div>
+        </div><br>
+      </div>
+      <div class="input-container">
+        <label for="password">Password</label>
+        <div><br>
+          <input type="password" id="password" placeholder="******" formControlName="password">
+        </div><br>
+        <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+          <div *ngIf="fc.password.errors.required">Should not be empty ! </div>
+        </div>
+      </div><br>
+      <div class="button">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
 </div>

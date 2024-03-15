@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   margin: 3rem;
 }
+.Restaurant{
+  margin: 0.5rem;
+  overflow: hidden;
+  color: #2c9c19;
+  font-size: xx-large;
+}
 
 .container > *{
   min-width: 25rem;
