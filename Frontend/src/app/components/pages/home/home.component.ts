@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RestaurantService } from 'src/app/services/RestaurantService'; 
+import { RestaurantService } from 'src/app/services/restaurant.service'; 
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
 import { Restaurant } from 'src/app/shared/models/Restaurant';
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
  
   constructor(private foodService: FoodService, private restaurantService: RestaurantService, private activateRoute: ActivatedRoute) {
     let foodsObservable: Observable<Food[]>;
-
+    let  restaurantsObservable: Observable<Restaurant[]>;
+   
     activateRoute.params.subscribe((params) => {
       if (params.searchTerm) {
         foodsObservable = this.foodService.getAllFoodBySearchTerm(params.searchTerm);
@@ -29,11 +30,25 @@ export class HomeComponent implements OnInit {
         foodsObservable = this.foodService.getAll();
       }
 
-      foodsObservable.subscribe((serverFoods) => {
-        this.foods = serverFoods;
+      foodsObservable.subscribe((serverFoods: Food[]) => {
+  
+        this.foods = serverFoods.sort((a: Food, b: Food) => b.stars - a.stars).slice(0, 10);
+      
       });
-      this.restaurants = this.restaurantService.getAll();
+      restaurantsObservable = this.restaurantService.getAll();
+      restaurantsObservable.subscribe((serverRestaurants: Restaurant[]) => {
+        this.restaurants = serverRestaurants.sort((a: Restaurant, b: Restaurant) => b.stars - a.stars).slice(0, 5);
+      });
     });
+
+    
+
+
+     
+    
+    
+
+
 
 
   

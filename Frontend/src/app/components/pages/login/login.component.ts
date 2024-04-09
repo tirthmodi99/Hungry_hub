@@ -72,7 +72,7 @@ get fc(){
 }
 
 submit(){
-  debugger
+// debugger
   this.isSubmitted = true;
   // if(this.loginForm.invalid) return;
 

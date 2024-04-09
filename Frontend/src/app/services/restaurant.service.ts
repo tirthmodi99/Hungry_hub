@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Restaurant } from '../shared/models/Restaurant';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Restaurants_BY_ID_URL, Restaurants_BY_SEARCH_URL, Restaurants_TAGS_URL, Restaurants_URL } from '../shared/constants/url';
-import { Restaurant } from '../shared/models/Restaurant';
+import { Restaurants_BY_ID_URL, Restaurants_BY_SEARCH_URL, Restaurants_URL } from '../shared/constants/url';
+
 // import { RSTag } from '../shared/models/Tagrs';
 
 
@@ -12,13 +13,13 @@ import { Restaurant } from '../shared/models/Restaurant';
 
 
   export class RestaurantService {
-  [x: string]: any;
+
     constructor(private httpClient: HttpClient) { }
     getAll():Observable<Restaurant[]> {
       return this.httpClient.get<Restaurant[]>(Restaurants_URL)
     }
 
-//search Food
+//search Restaurant
   getAllRestaurantBySearchTerm(searchTerm: string){
     return this.httpClient.get<Restaurant[]>(Restaurants_BY_SEARCH_URL + searchTerm)
   }

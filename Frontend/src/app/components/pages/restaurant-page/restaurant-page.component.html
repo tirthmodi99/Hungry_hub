@@ -1,19 +1,19 @@
 
-<app-not-found [visible]="!restaurants" notFoundMessage="Restaurants Not Found"
+ <app-not-found [visible]="!restaurant" notFoundMessage="Restaurants Not Found"
     resetLinkText="Back To Homepage"></app-not-found>
 
-<div *ngIf="restaurants" class="container">
-    <img [src]="restaurants.imageUrl" [alt]="restaurants.name" />
+<div *ngIf="restaurant" class="container">
+    <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
 
     <div class="details">
         <div class="header">
             <span class="name">
-                {{restaurants.name}}
+                {{restaurant.name}}
             </span>
-            <span class="favorite {{restaurants.favorite? '': 'not'}}">❤</span>
+            <span class="favorite {{restaurant.favorite? '': 'not'}}">❤</span>
         </div>
         <div class="rating">
-            <star-rating [value]="restaurants.stars" [totalstars]="5" [checkedcolor]="restaurants.stars >= 3.5 ? 'gold' : 'red'"
+            <star-rating [value]="restaurant.stars" [totalstars]="5" [checkedcolor]="restaurant.stars >= 3.5 ? 'gold' : 'red'"
                 uncheckedcolor="black" size="25px" [readonly]="true">
             </star-rating>
             

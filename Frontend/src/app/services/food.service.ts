@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Food } from '../shared/models/Food';
 import { Tag } from '../shared/models/Tag';
 import { HttpClient } from '@angular/common/http';

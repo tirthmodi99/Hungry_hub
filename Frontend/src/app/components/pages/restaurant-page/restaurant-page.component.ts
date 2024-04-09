@@ -10,6 +10,7 @@ import { Restaurant } from 'src/app/shared/models/Restaurant';
 })
 export class RestaurantPageComponent implements OnInit {
   restaurants!: Restaurant;
+restaurant: any;
   constructor (activatedRoute:ActivatedRoute, private api:RestaurantService, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)

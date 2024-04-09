@@ -54,13 +54,13 @@
   <div>
       <div class= "heading">
         <h2 style="margin-left: 7.5rem;">Top Rated Restaurants with online food Delivery</h2>
-  <a routerLink="/restaurant"><strong class="view">View All >></strong></a>
+  <a routerLink="/restaurants"><strong class="view">View All >></strong></a>
   </div>
   <app-not-found [visible]="!restaurants || !restaurants.length" notFoundMessage="Restaurants Not Found" resetLinkText="Reset Search">
   </app-not-found>
   <ul>
     <li *ngFor="let restaurant of restaurants">
-      <a routerLink="/restaurant/{{restaurant.rstid}}">
+      <a routerLink="/restaurants/{{restaurant.rstid}}">
         <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
         <div class="content">
           <div class="name">
