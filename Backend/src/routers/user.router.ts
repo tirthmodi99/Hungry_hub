@@ -26,7 +26,7 @@ router.post("/login", asyncHandler(
     const user = await UserModel.findOne({email});
   
      if(user && (await bcrypt.compare(password,user.password))) {
-      res.send(generateTokenReponse(user));
+      res.send(generateTokenResponse(user));
      }
      else{
        res.status(HTTP_BAD_REQUEST).send("Username or password is invalid!");
@@ -45,7 +45,7 @@ router.post('/register', asyncHandler(
       return;
     }
 
-    const encryptedPassword = await bcrypt.hash(password, 10);
+    const encryptedPassword = await bcrypt.hash(password, 8);
 
     const newUser:User = {
       id:'',
@@ -57,26 +57,40 @@ router.post('/register', asyncHandler(
     }
 
     const dbUser = await UserModel.create(newUser);
-    res.send(generateTokenReponse(dbUser));
+    res.send(generateTokenResponse(dbUser));
   }
 ))
+const generateTokenResponse = (user: User) => {
 
-  const generateTokenReponse = (user : User) => {
-    const token = jwt.sign({
-      id: user.id, email:user.email, isAdmin: user.isAdmin
-    },process.env.JWT_SECRET!,{
-      expiresIn:"30d"
-    });
-  
-    return {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    throw new Error('JWT_SECRET environment variable is not set');
+  }
+
+
+  const token = jwt.sign(
+    {
       id: user.id,
       email: user.email,
-      name: user.name,
-      address: user.address,
-      isAdmin: user.isAdmin,
-      token: token
-    };
-  }
+      isAdmin: user.isAdmin
+    },
+    secret,
+    {
+      expiresIn: '30d'
+    }
+  );
+
+
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    address: user.address,
+    isAdmin: user.isAdmin,
+    token: token
+  };
+};
+
   
 
   export default router;
